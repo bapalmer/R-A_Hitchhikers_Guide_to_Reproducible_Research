@@ -1,4 +1,4 @@
-# R-A_Hitchhikers_Guide_to_Reproducible_Research
+# R: A Hitchhikers Guide to Reproducible Research
 
 **Day 1**
 
