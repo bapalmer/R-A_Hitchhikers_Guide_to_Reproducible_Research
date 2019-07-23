@@ -1,0 +1,14 @@
+## **Cleaned WHO TB data set**
+
+It's a good idea to have a short README file to introduce a folder. There's a README file in the top level of this project. 
+
+This README file is designed to highlight the main points of the data. Something that will serve a as quick reminder when you need it most.
+
+### Description
+A subset of data from the World Health Organization Global Tuberculosis Report, and accompanying global populations that comes as part of the tidyr package (~data/raw_data/who_tb_data.csv).
+
+### Source
+![](http://www.who.int/tb/country/data/download/en/)
+
+### Cleaning procedure
+The data has been cleaned as oulined in `r scripts/01_eg_clean_data.R` resulting in a data frame with seven columns (country, year, type, age, f, m, total) and 38270 observations.
