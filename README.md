@@ -9,23 +9,23 @@ Reproducible research practices may seem like an additional workload but in real
 
 Many of the topics covered are day-to-day tasks that depend solely on the increasingly scarce resource of common sense! Hopefully the R notes/scripts/worksheets will takes things a big step further towards reproducible research using R/RStudio and scripted workflows 
 
-#**Don't do silent work**
+# **Don't do silent work**
 
-###**Day 1**
+### **Day 1**
 + Introduction to reproducible research
 + Introduction to the R language
 + Introduction to R-projects to organise your research
 + File naming and data provenance
 + Data entry
 
-###**Day 2**
+### **Day 2**
 + Accessing help in R
 + Data import
 + Data tidying
 + Data transformation
 + Graphics in R
 
-###**Day 3**
+### **Day 3**
 + Statistical applications
 + Functions and loops
 + Reporting using R Markdown
