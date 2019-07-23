@@ -11,7 +11,7 @@ Many of the topics covered are day-to-day tasks that depend solely on the increa
 
 # **Don't do silent work**
 
-### **Day 1**
+### [**Day 1**](https://github.com/bapalmer/R-A_Hitchhikers_Guide_to_Reproducible_Research/tree/master/Day_1)
 + Introduction to reproducible research
 + Introduction to the R language
 + Introduction to R-projects to organise your research
