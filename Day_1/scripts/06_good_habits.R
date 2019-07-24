@@ -41,14 +41,13 @@ first_day_of_the_month
 firstdayofthemonth
 DayOne
 
-
 # 5. Object names ---------------------------------------------------------
 # Must start with a letter and can only contain letters, numbers, "_" and "."
 # Good
 this_is_recommended <- 5 #Although it should be shortened
 so.is.this <- 5
 
-#Bad
+# Bad
 1.not.this <- 5
 notthiseither <- 5
 
@@ -92,6 +91,7 @@ x <- list(total = a + b + c, mean  = (a + b + c) / n, places = c("Baltimore", "Y
 # 7. Break the code up into digestible chunks -----------------------------
 # Add notes to clarify why some operations were performed
 # Here is some example code from a project I'm currently working on
+
 clean_data <- read_csv("path to my data table.csv") %>%
   
   select(-safety.data) %>% # This column contained a solitary "." entry
@@ -121,10 +121,3 @@ data_tibble <- read_csv(here("data", "raw_data.csv")) # Argument A is the folder
 
 ggplot(df, aes(x, y)) + geom_point() %>%
 ggsave(here("figs", "output_fig.png"))
-
-# The 'styler' package pretty-prints R code 
-# install.packages("styler")
-
-# Now, to tidy up a messy R scipt goto
-# Tools -> Addins -> Browse Addins -> style active file -> Execute
-# All your formatting done in a click
