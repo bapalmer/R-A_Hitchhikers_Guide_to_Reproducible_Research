@@ -1,13 +1,13 @@
-#########################################################################
-# 1-day R workshop 
-# Morning practical session B
-# 3rd May 2019
-# 03_eg_clean_data.R
-#########################################################################
+###########################################################################
+# 3-day R workshop 
+# Day 1
+# Afternoon
+# 01_eg_clean_data.R
+###########################################################################
 # Load the required packages
 library(tidyverse)
 
-# Section 1: Load the data ----
+# Section 1: Load the data ------------------------------------------------
 # This data frame has 2 lines of meta data that must be skipped over
 who_tb_data <- read_csv("data/raw_data/who_tb_data.csv",
                         skip = 2) %>%

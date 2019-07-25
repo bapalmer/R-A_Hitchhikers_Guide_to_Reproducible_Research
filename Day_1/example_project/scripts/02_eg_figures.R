@@ -1,13 +1,13 @@
-#########################################################################
-# 1-day R workshop 
-# Morning practical session B
-# 3rd May 2019
+###########################################################################
+# 3-day R workshop 
+# Day 1 
+# Afternoon
 # 02_eg_figures.R
-#########################################################################
+###########################################################################
 # Read in the clean WHO TB data
 source("scripts/01_eg_clean_data.R")
 
-# Irish data preliminary plot ----
+# Irish data preliminary plot ---------------------------------------------
 # Pick any question you'd like to ask of the data
 # I'm from Ireland, so I might be interested in TB data for Ireland
 
@@ -22,9 +22,7 @@ who_ire <- who_tb_data %>%
 
 who_ire
 
-
-
-# End of project ----
+# End of project ----------------------------------------------------------
 # 2007 looked like a bad year
 # Your own area of interest may be paediatrics
 # What is the breakdown for the type of TB in the youngest cohort?
