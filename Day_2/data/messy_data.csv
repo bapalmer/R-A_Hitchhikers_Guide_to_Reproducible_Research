@@ -1,0 +1,9 @@
+id,drug,work,play,name,gender,dob
+1,control,0.06,0.27,jane doe,f,12-05-1979
+2,treatment,0.42,0.3,john doe,m,08-01-1980
+3,treatment,0.22,0.09,jane smith,f,06-08-1999
+4,control,NA,0.84,john smith,m,10-10-1990
+5,control,0.38,0.65,jack jones,m,01-08-1985
+6,treatment,0.57,0.98,jim jones,m,25-05-1968
+7,treatment,0.24,0.38,jane jones,f,31-08-1995
+8,control,0.61,NA,jill jones,f,17-12-1975
