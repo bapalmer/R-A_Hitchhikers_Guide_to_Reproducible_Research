@@ -46,7 +46,7 @@ typeof(back_to_numbers)
 # Create a new object 'y'and assign a sequence of numbers to it
 # e.g. 1:10 or c(1:3, 15, 6:9, 18:30)
 
-# 6. Are the following vectors a and b the same?
+# 6. Are the following vectors x and y the same?
 
 x <- c(1:3, 15, 6:9, 18:30)
 y <- c(1:3, '15', 6:9, 18:30)
