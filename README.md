@@ -18,7 +18,7 @@ Many of the topics covered are day-to-day tasks that depend solely on the increa
 + File naming and data provenance
 + Data entry
 
-### **Day 2**
+### [**Day 2**](https://github.com/bapalmer/R-A_Hitchhikers_Guide_to_Reproducible_Research/tree/master/Day_2)
 + Accessing help in R
 + Data import
 + Data tidying
