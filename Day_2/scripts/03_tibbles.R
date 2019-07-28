@@ -69,4 +69,4 @@ str(data.frame(
 # 7. A useful function to stop your active environment cluttering up is rm()
 # This removes data structures from your workspace
 
-rm(url, example_df, example_tbl, example_tbl_now_a_df)
+rm(example_df, example_tbl, example_tbl_now_a_df)

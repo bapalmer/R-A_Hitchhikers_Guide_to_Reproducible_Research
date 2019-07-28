@@ -30,17 +30,19 @@ messy_data_v2 <- separate()
 # i.e. it makes 'wide' data longer
 # The orignal column names become values in new column A
 # The original values are placed in new column B
-# e.g. long_data <- gather(wide_data, new_column_A_name, new_column_B_name, column_1:column_n)
-# Use the example code to gather columns 'work' and 'play'
+# e.g. long_data <- gather(wide_data, 
+#                          new_column_A_name, new_column_B_name, 
+#                          column_1:column_n)
 
-messy_data_v3a <- gather(messy_data, 
-                         condition, value, 
-                         work:play)
+# Use the example code to gather columns 'work' and 'play' in messy_data
+
+messy_data_v3a <- gather()
 
 # 3b. Rather than naming the columns, you can call on them by their positional number
 
 messy_data_v3b <- gather(messy_data, 
-                         condition, value, 
+                         key = condition, 
+                         value = value, 
                          3:4)
 
 # 3. What is the result of the following?
@@ -51,7 +53,12 @@ messy_data_v3a == messy_data_v3b
 # We'll talk about it in more detail later
 # For now, lets just remove those rows with missing data using drop_na()
 
-messy_data_v3_NA <- drop_na(messy_data_v3_a)
+messy_data_v3_na <- drop_na(messy_data_v3a)
+
+# drop_na() - will remove whole rows containing an NA value
+# This is useful if your data does not contain much missing information
+# but if there are a lot of NAs, you will remove a lot of useful data too
+# Including the "na.rm = TRUE" arguement within functions is another option
 
 # 5. To reverse some of the actions above, we can use the functions unite() and spread()
 # unite() collapses cells across the columns selected to give a single column 
@@ -66,5 +73,40 @@ messy_data_dob <- unite(data,
 # Use spread() to reverse what you did in section 2
 
 messy_data_wide <- spread(messy_data_v3a, 
-                          condition, 
-                          value)
+                          key = condition, 
+                          value = value)
+
+# 7. Here's an example of creating a continuous code chunk
+
+# Load the data
+tidy_data <- read_csv('Day_2/data/messy_data.csv') %>%
+
+  # Separate name column
+  separate(name,
+           c('firstname', 'surname'),
+           sep = ' ') %>%
+  
+  # Gather columns work and play
+  gather(key = condition, 
+         value = value, 
+         work:play)
+
+# 8. How do we manipulate NA values if they are present?
+
+na_rows <- tidy_data %>% 
+  
+  # If the data is a data frame use a named list
+  replace_na(list(value = list("unknown"))) 
+
+# 9. Other useful tidyr functions:
+# complete() - takes a set of columns and finds all unique combinations
+# It ensures the original data set has all combinations by filling them with NA
+
+# fill() - Somethings values are missing as the value is carried forward, just not entered
+# Fill will replace empty cells with the most recent non-missing value
+
+# 10. NOTE: gather and spread are now deprecated and to be replaced by 
+# pivot_longer() and pivot_wider in upcoming releases the tidyverse
+# Why?
+# Nobody has ever remembered how to use spread without looking up stackoverflow first!!
+

@@ -42,3 +42,10 @@ source("")
 
 # 8. Standardize your line indentation
 # Ctrl/Cmd+I
+
+# 9. If you want to comment out multiple lines, first select them and then...
+# Ctrl/Cmd+Shift+C
+
+diamonds %>%
+  select(carat, cut, clarity) %>%
+  filter(carat > 3)

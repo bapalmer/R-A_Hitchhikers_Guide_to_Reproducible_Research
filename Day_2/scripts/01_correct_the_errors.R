@@ -95,3 +95,40 @@ View(All_chars)
 # 4. And here?
 
 class(all_char[[1])
+
+# 5. # Computers use finite precision arithmetic, therefore all numbers
+# are an approximation
+
+# Compare the following results?
+
+1/49*49 == 1
+
+# We can resolve this using the 'near()' function
+
+near(1/49*49, 1)
+
+# Package conflicts -------------------------------------------------------
+
+# There are thousands of R packages and many of them share function names
+# Where two packages are loaded you can get conflicts in your code
+
+# The dplyr package has a function called select
+# dplyr was loaded when we loaded the tidyverse earlier so lets use it
+
+select(diamonds, carat, cut, clarity)
+
+# The MASS package also has a function called select()
+# Run the following lines of code
+
+install.packages("MASS")
+library(MASS)
+
+select(diamonds, carat, cut, clarity)
+
+# To avoid this problem we can specifically point to the correct package
+
+dplyr::select(diamonds, carat, cut, clarity)
+
+# We can also unload loaded packaged
+
+detach("package:MASS", unload = TRUE)
