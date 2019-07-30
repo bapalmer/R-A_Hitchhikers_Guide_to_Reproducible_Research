@@ -1,9 +1,9 @@
 # Question asked:
-# "When using the following code" - is there a simple way to include 
-# a summarise row to the end of the output that is ungrouped 
-# (i.e. the totals for the whole sample)?
+# "When using the following code...
+# - is there a simple way to include a summarise row to the end of
+# the output that is ungrouped, (i.e. the totals for the whole sample)?"
 
-# Ans: NO, there isn't an easy way that I could find immediately
+# Ans: No, there isn't an easy way that I could find immediately
 # My 'hacky' attempt below works, it but isn't very pretty
 
 #Load the data and tidy it
@@ -59,6 +59,3 @@ tidy_summaries <- tidy_data %>%
   ) # This bracket closes the bind_rows function call
 
 tidy_summaries
-      
-     
-      
