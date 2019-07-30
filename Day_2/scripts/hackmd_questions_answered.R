@@ -1,5 +1,5 @@
-# Christian asked:
-# "When using the followin code" - is there a simple way to include 
+# Question asked:
+# "When using the following code" - is there a simple way to include 
 # a summarise row to the end of the output that is ungrouped 
 # (i.e. the totals for the whole sample)?
 
