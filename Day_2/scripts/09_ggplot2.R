@@ -246,7 +246,46 @@ ggsave("Day_2/plots/leu1_plot.pdf",
        dpi = 300, 
        units = "cm")
 
-# 12. One other nice function...
+# 12. The stat argument
+# Many geoms use the raw date directly
+# geompoint will plot x versus y
+
+# Other geoms transform the data first
+# To go this they have a 'stat' argument
+# Check the default stat argument for geom_bar
+
+?geom_bar
+
+# Usage
+# geom_bar(mapping = NULL, data = NULL, stat = "count",
+#          position = "stack", ..., width = NULL, binwidth = NULL,
+#          na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut))
+
+# The y-axis displays count, but count is not givenas a variable
+# It comes from an algorithm called a 'stat'
+# stats and geoms can be used interchangeably
+
+ggplot(data = diamonds) +
+  stat_count(mapping = aes(x = cut))
+
+# ggplot2 has over 20 stat functions!
+
+# Consider the following
+
+diamonds %>%
+  
+  group_by(cut) %>%
+  
+  summarise(mean = mean(price)) %>%
+  
+  ggplot(aes(x = cut, y = mean)) +
+  
+  geom_bar(stat = 'identity') # Takes the raw values and plots it
+
+# 13. One other nice function...
 
 xy <- ggplot(data = leucine_genes,
              mapping = aes(x = molecular_function, 
@@ -269,7 +308,7 @@ yx <- xy +
 
 yx
 
-# 13. And finally...
+# 14. And finally...
 
 library(plotly)
 
