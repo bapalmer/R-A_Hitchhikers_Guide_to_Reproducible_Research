@@ -26,7 +26,7 @@ Many of the topics covered are day-to-day tasks that depend solely on the increa
 + Graphics in R
 
 ### **Day 3**
-+ Statistical applications
 + Functions and loops
++ Statistical applications
 + Reporting using R Markdown
 + Data packages
