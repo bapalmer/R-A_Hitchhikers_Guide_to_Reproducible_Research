@@ -25,8 +25,8 @@ Many of the topics covered are day-to-day tasks that depend solely on the increa
 + Data transformation
 + Graphics in R
 
-### **Day 3**
-+ Functions and loops
+### [**Day 3**](https://github.com/bapalmer/R-A_Hitchhikers_Guide_to_Reproducible_Research/tree/master/Day_3)
 + Statistical applications
++ Functions and loops
 + Reporting using R Markdown
 + Data packages
