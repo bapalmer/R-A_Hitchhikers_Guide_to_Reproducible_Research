@@ -1,0 +1,137 @@
+---
+title: "This is a reproducible document"
+author: "Dr. Brendan Palmer"
+date: "18th June 2019"
+output:
+  word_document:
+    fig_height: 4
+    fig_width: 6
+---
+
+# This is the beginning of the project
+
+Our initial reports might be restricted to lab meetings etc. We can use `R Markdown` to show the code we are using, so that the meetings are not just a demonstration of the results, but also an examination of the `code` used to obtain them.
+
+## Data overview
+
+```{r packages and setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+# Load your packages here  
+
+library(tidyverse)
+library(knitr)
+
+```
+
+The plot below is call from the ggplot object entitled `report_plot` created in the script `03_final_analysis.R`. 
+
+```{r Plots from script, echo = FALSE}
+
+source("scripts/03_final_analysis.R")
+
+# The location of the Rmd file dictates whether the path to other files is intact
+
+report_plot
+
+```
+
+**Fig. 1.** Flavonoid content of three lettuce varieties under three experimental conditions. 
+
+Or we can also recreate the code within the R Markdown document as seen below.
+
+```{r Plot from code, echo = TRUE}
+
+source("scripts/01_data_clean.R")
+
+lettuce_variety <- c(cos = "Cos Dixter",
+                     red = "Red Oakleaf",
+                     sky = "Skyphos")
+
+data %>%
+  filter(week_no == "3") %>%
+  ggplot(aes(x = variety, y = flavonoids)) +
+  
+  geom_boxplot(outlier.shape = NA) + # Hides the outlier points 
+  geom_beeswarm() +
+  
+  scale_x_discrete(breaks = c("cos", "red", "sky"),
+                   labels = c("Cos Dixter", "Red Oakleaf", "Skyphos")) +
+  
+  ylim(0,5) +
+  
+  labs(x = "",
+       y = "Flavonoids (ppm)",
+       title = "Lettuce variety vs flavonoid content") +
+  
+  theme(panel.background = element_blank(),     #Remove grey background
+        axis.title = element_text(face = "bold", size = 12),
+        axis.text = element_text(face = "bold", size = 10),
+        axis.line = element_line(colour = "black", size = 1),
+        plot.title = element_text(hjust = 0.0))
+
+```
+
+
+## Statistical tests
+
+This table summarises the statistical tests we conducted in the script `03_analysis.R`.
+
+**Table 1.** Pairwise comparisons from a two way Analysis of Variance of flavonoid content by lettuce type and filter.
+
+```{r AOV table, echo = FALSE}
+
+kable(fla_aov, digits = 3)
+
+```
+
+The data suggests that we do not have enough evidence to conclude that filter type alters the mean flavonoid content of the lettuce varieties tested.
+
+The data does support the alternative hypothesis that the mean flavonoid content differs between the lettuce varieties used in this experiment. 
+
+The flavonoid content of Cos Dixter was observed to be higher overall than Red Oak leaf (`r fla_aov$Estimate[fla_aov$Comparison == "cos-red"]` ppm, 95% CI: `r round(fla_aov[[1, 4]], digits = 3)` - `r round(fla_aov[[1, 5]], digits = 3)`).
+
+## Conclusion
+The information presented here can be traced all the way back to the raw CSV data file. If an error is detected, it can be corrected. If Reviewer #2 requests changes to any element of the work, it can be done in a straightforward manner.
+
+### Reviewer # 2 comments
+I don't like B/W images. Give me some colour!
+
+### Response
+No problem
+
+```{r Make the reviewer happy, echo = FALSE}
+
+source("scripts/01_data_clean.R")
+
+lettuce_variety <- c(cos = "Cos Dixter",
+                     red = "Red Oakleaf",
+                     sky = "Skyphos")
+
+data %>%
+  filter(week_no == "3") %>%
+  ggplot(aes(x = variety, y = flavonoids, colour = variety)) +
+  
+  geom_boxplot(outlier.shape = NA) + 
+  geom_beeswarm() +
+  
+  scale_color_manual(values = c("red", "orange", "purple")) +
+
+  scale_x_discrete(breaks = c("cos", "red", "sky"),
+                   labels = c("Cos Dixter", "Red Oakleaf", "Skyphos")) +
+  
+  ylim(0,5) +
+  
+  labs(x = "",
+       y = "Flavonoids (ppm)",
+       title = "How do you like them for apples") +
+  
+  theme(panel.background = element_blank(),
+        axis.title = element_text(face = "bold", size = 12),
+        axis.text = element_text(face = "bold", size = 10),
+        axis.line = element_line(colour = "black", size = 1),
+        plot.title = element_text(hjust = 0.0),
+        legend.position = "")
+
+```

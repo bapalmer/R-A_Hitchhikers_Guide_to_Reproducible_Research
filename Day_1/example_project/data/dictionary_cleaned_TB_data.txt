@@ -1,8 +1,0 @@
-variable	data_type	data_format	example	description
-country	character	NA	Ireland	TB data broken down by individual country (219 in total)
-year	numeric	integer	2005	"Year data collected, min = 1980, max = 2013"
-type	character	NA	sp	"Code for method of diagnosis (rel = relapse, sn = negative pulmonary smear, sp = positive pulmonary smear, ep = extrapulmonary)"
-age	numeric	integer	1524	"Code for age group (14 = 0-14 yrs of age, 1524 = 15-24 years of age, 2534 = 25 to 34 years of age, 3544 = 35 to 44 years of age, 4554 = 45 to 54 years of age, 5564 = 55 to 64 years of age, 65 = 65 years of age or older"
-f	numeric	integer	34	Cases recorded in females
-m	numeric	integer	23	Cases recorded in males
-total	numeric	integer	45	Total numer of cases

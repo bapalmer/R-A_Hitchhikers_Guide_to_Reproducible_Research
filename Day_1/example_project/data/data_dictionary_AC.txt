@@ -1,0 +1,11 @@
+field_name	data_type	data_format	example	standard_units	description
+id	numeric	integer	23	NA	Unique identifier applied to each observation
+week_no	numeric	integer	1	NA	Week number, 1 = 7 days exposure, 2 = 14 days exposure, 3 = 21 days exposure
+filter_name	character	NA	my	NA	3 filter types; 'ptp' = polytunnel plastic blocks all UV light (transmits just visible light); 'my' = Mylar blocks UVB light (transmits visible +UVA); 'ca' = Cellulose acetate transmits full light spectrum(visible, UVA and UVB)"
+treatment	character	NA	filter	NA	Presence or absence of a filter at the time of sampling
+replicate_no	numeric	integer	1	NA	The number of replicates in each treatement
+flavonoids	numeric	double	0.3421	parts per million (ppm)	Leaf disc taken from the tip of the most mature leaf at the time of harvest
+biomass	numeric	double		gram (g)	Above ground biomass on the day of harvest
+variety 	character	NA	cos	NA	3 commerical varieties of red lettuce used; 'cos' = Cos Dixter, 'sky' = Skyphos, 'red' = Red Oakleaf 
+date	date	YYYY/MM/DD	2019/04/30	ISO 8601	Experiment date
+investigator	character	Firstname Lastname	Aoife Coffey	NA	Primary researcher who performed the experiment

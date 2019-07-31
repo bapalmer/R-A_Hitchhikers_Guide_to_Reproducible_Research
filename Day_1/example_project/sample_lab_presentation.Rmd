@@ -1,0 +1,72 @@
+---
+title: "Lab meeting 1"
+author: "Brendan Palmer"
+date: "19th June 2019"
+output: slidy_presentation
+---
+
+# Data overview
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#Packages 
+
+library(tidyverse)
+library(png)
+library(grid)
+library(beeswarm)
+
+```
+
+- Analysis of a data set provided by Dr Aoife Coffee, UCC Library
+- This experiment assessed the impact of UV over 21 days on plant growth and the accumulation of secondary metabolites
+- Three varieties of lettuce
+    - Cos Dixter, Skyphos, Red Oakleaf
+    
+- Three filter types employed
+    - ca, my, ptp
+    
+- Plant samples taken at 0, 1, 2 and 3 weeks
+    - For the first 7 days, no filter used
+    - Plants were sampled without replacement
+        - Same baseline used for each filter
+        
+# Questions to ask of the data
+
+- $H_{o}$: $\mu_{red}$ = $\mu_{cos}$ = $\mu_{sky}$
+    - Mean falvonoid content of lettuce varieties is the same
+
+- $H_{o}$: $\mu_{ca}$ = $\mu_{ptp}B$ = $\mu_{my}$
+    - Mean flavonoid content of lettuce grown under different filters is the same
+
+# Initial analysis
+
+```{r fig.width=8, fig.height=4,echo=FALSE}
+
+img <- readPNG("plots/2019-06-17_overview1_flavonoids.png")
+ grid.raster(img)
+ 
+```
+
+# Initial analysis
+
+```{r fig.width=8, fig.height=4,echo=FALSE}
+img <- readPNG("plots/2019-06-18_overview2_flavonoids.png")
+ grid.raster(img)
+```
+
+# Initial analysis
+
+```{r fig.width=8, fig.height=4,echo=FALSE}
+img <- readPNG("plots/2019-06-18_biomass_overview.png")
+ grid.raster(img)
+```
+
+# Summary
+
+- Relatively little change in flavonoid content during the first two weeks
+- Spike in flavonoid content at week 3
+- Cos Dixter flavonoid (ppm) content was highest of all three varieties
+- Filter type had visiable impact on biomass
+    - ptp > my > ca
