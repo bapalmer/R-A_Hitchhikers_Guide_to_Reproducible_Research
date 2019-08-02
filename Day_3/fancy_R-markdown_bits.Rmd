@@ -1,0 +1,52 @@
+---
+title: "Fancy R Markdown bits"
+author: "Brendan Palmer"
+date: "2nd August 2019"
+output: html_document
+---
+
+## summarytools package
+This is a great was of quickly summarising data. It run smoothly in the R console and generates the output to the Viewer window. The code below will run it in R Markdown
+
+```{r, echo = FALSE, message=FALSE}
+
+library(tidyverse)
+library(summarytools)
+
+print(dfSummary(diamonds, 
+                graph.magnif = 0.75, 
+                na.col = FALSE, 
+                varnumbers = FALSE,  
+                valid.col = FALSE,  
+                report.title = "Summary of the diamonds data set"), 
+      method = "render", footnote = NA, headings = FALSE)
+
+```
+
+## Nicer tables
+We can get some nice tables using the kableExtra package
+
+*Table 1. Overview of the raw data*  
+```{r kableExxtra, echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(broom)
+
+bp_df <- read_delim("data/forbes.txt", delim = "\t", trim_ws = TRUE)
+
+forbes_lm <- lm(100*log10(Pressure) ~ Boilingpt, data = bp_df)
+
+forbes_lm_df <- tidy(forbes_lm) %>%
+  mutate(`p-value` = ifelse(p.value < 0.001, "< 0.001", p.value)) %>%
+  select(-p.value) %>%
+  rename(Term = term,
+         Estimate = estimate,
+         `Std Error` = std.error,
+         `Test statistic` = statistic)
+
+forbes_lm_df %>%
+  kable(align = c("lcccc")) %>% # Align text left (col 1), right (Col2) ...) %>%
+  kable_styling(bootstrap_options = c("striped", "condensed"), full_width = TRUE, font_size = 10) %>%
+  column_spec(c(1), bold = TRUE, 
+              color = "white", background = "red")
+```

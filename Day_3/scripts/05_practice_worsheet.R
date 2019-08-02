@@ -2,7 +2,7 @@
 # 3-day R workshop 
 # Day 3
 # Morning
-# 04_practice_worksheet.R
+# 05_practice_worksheet.R
 ###########################################################################
 
 # 1. Look up the help for functions
