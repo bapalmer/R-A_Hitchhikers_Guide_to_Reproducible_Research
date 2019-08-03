@@ -58,10 +58,10 @@ df1 <- tibble(a = sample(1:10, 10, replace = TRUE),
               c = sample(1:10, 10, replace = TRUE),
               d = sample(1:10, 10, replace = TRUE))
 
-df1$a <- rescale01(df$a)
-df1$b <- rescale01(df$b)
-df1$c <- rescale01(df$c)
-df1$d <- rescale01(df$d)
+df1$a <- rescale.01(df$a)
+df1$b <- rescale.01(df$b)
+df1$c <- rescale.01(df$c)
+df1$d <- rescale.01(df$d)
 
 # Now the code is easier to read and changes are easier to implement
 # However, we can improve on this further with a for loop
@@ -69,7 +69,7 @@ df1$d <- rescale01(df$d)
 #Create a few numeric vectors to try it out
 # What can we learn if we built the function without the na.rm?
 
-rescale01_na <- function(x){
+rescale.01_na <- function(x){
   
   rng <- range(x)
   (x -rng[1]) / (rng[2] - rng[1])
