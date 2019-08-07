@@ -19,8 +19,8 @@ df <- tibble(a = sample(1:10, 10, replace = TRUE),
 df
 
 # 1. Spot the mistake -----------------------------------------------------
-# The following lines of code rescale the values in a column between the 
-# range 0 to 1
+# The following lines of code rescales/normailises the values in a column 
+# between the range 0 to 1
 
 df$a <- (df$a - min(df$a, na.rm = TRUE)) /
   (max(df$a, na.rm = TRUE) - min(df$a, na.rm = TRUE))
@@ -49,7 +49,7 @@ df
 rescale.01 <- function(x){ # Informative name
   
   rng <- range(x, na.rm = TRUE) # Will return a vector with two elements
-  (x -rng[1]) / (rng[2] - rng[1])
+  (x - rng[1]) / (rng[2] - rng[1])
   
 } 
 
@@ -66,15 +66,7 @@ df1$d <- rescale.01(df$d)
 # Now the code is easier to read and changes are easier to implement
 # However, we can improve on this further with a for loop
 
-#Create a few numeric vectors to try it out
-# What can we learn if we built the function without the na.rm?
-
-rescale.01_na <- function(x){
-  
-  rng <- range(x)
-  (x -rng[1]) / (rng[2] - rng[1])
-  
-}
+# Create a few numeric vectors to try it out
 
 # 3. Conditonal arguments in a function -----------------------------------
 # Confirm whether an object is numeric or a character vector
