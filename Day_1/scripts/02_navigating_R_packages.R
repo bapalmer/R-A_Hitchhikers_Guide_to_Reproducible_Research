@@ -26,8 +26,12 @@
 # Type "?mpg" into the console
 
 # 5. R IS CASE SENSITIVE
+
 # Type "r <- 5"
 # Type "r" and hit return
 
 # Type "R" and hit return
 
+# 6. You can access example data from the 'datasets' package
+
+datasets::

@@ -1,7 +1,7 @@
 ---
 title: "This is a reproducible document"
 author: "Dr. Brendan Palmer"
-date: "18th June 2019"
+date: "2nd August 2019"
 output:
   word_document:
     fig_height: 4
@@ -14,20 +14,12 @@ Our initial reports might be restricted to lab meetings etc. We can use `R Markd
 
 ## Data overview
 
-```{r packages and setup, include = FALSE}
-
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-
-# Load your packages here  
-
-library(tidyverse)
-library(knitr)
-
-```
-
 The plot below is call from the ggplot object entitled `report_plot` created in the script `03_final_analysis.R`. 
 
 ```{r Plots from script, echo = FALSE}
+
+library(tidyverse)
+library(knitr)
 
 source("scripts/03_final_analysis.R")
 

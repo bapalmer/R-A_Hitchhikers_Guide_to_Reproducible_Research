@@ -14,25 +14,25 @@
 
 x <- 10
 
-# 2. Create a numeric atomic vector
+# 2. Create a numeric atomic vector called all_numbers
 
-some_nums <- c(1, 2, 3, 4, 5, 6)
+all_numbers <- c(1, 2, 3, 4, 5, 6)
 
-# 3. Create a character atomic vector of five firstnames
+# 3. Create a character atomic vector of five firstnames called all_characters
 
-firstnames <- c('John', 'Mary', 'Joan', 'Freddy', 'Paul')
+all_characters <- c('John', 'Mary', 'Joan', 'Freddy', 'Paul')
 
-# 4. Create a logical atomic vector
+# 4. Create a logical atomic vector called all_logical
 
-true_false <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
+all_logical <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
 
-# 5. Convert your numeric vector to a character vector and back again
+# 5. Convert your numeric vector to a character vector and back to numeric again
 
-some_chars <- as.character(some_nums)
+some_chars <- as.character(all_numbers)
 
-back_to_nums <- as.numeric(some_chars)
+back_to_nums <- as.numeric(all_characters)
 
-# 6. Use ':' to generate a vector containing various numeric values
+# 6. Use ':' to generate a vector containing a sequence of numeric values
 
 lots_nums <- c(3:10, 20:11)
 
@@ -41,7 +41,7 @@ lots_nums <- c(3:10, 20:11)
 # 1. Read the help page about the sample() function
 ?sample()
 
-# 2. Use the numeric vector you created as the input to the sample function
+# 2. Use a numeric vector you created as the input to the sample function
 
 sample(lots_nums, 4)
 
@@ -66,7 +66,7 @@ max(lots_nums)
 eg_numeric <- c(1:3, NA, 9, NA, 11:34)
 
 # Calculate the mean of this
-# Hint: Look at the arguments for the mean() function
+# Hint: Look at the arguments for the mean() function on how to deal with NA values
 
 mean(eg_numeric, na.rm = TRUE)
 
@@ -74,21 +74,21 @@ mean(eg_numeric, na.rm = TRUE)
 
 # Consider the following dataframe 
 
-a_data_frame <- data.frame(num = 1:10,
+a_dataframe <- data.frame(num = 1:10,
                            char = rep(c('John', 'Jane', 'Jimmy', 'Joanne', 'Joe'), 2),
                            logi = rep(c(TRUE, FALSE), 5))
 
 # 1. Retrieve the first name in the char column
 
-a_data_frame$char[1]
+a_dataframe$char[1]
 
 # 2. Retrieve the last four values in the num column
 
-a_data_frame$num[7:10]
+a_dataframe$num[7:10]
 
 # 3. Subset the dataframe using 'Jane' as the condition
 
-subset(a_data_frame, char == 'Jane')
+subset(a_dataframe, char == 'Jane')
 
 # 4. Subset the dataframe for all 'nums' greater than six
 
@@ -97,14 +97,14 @@ subset(a_data_frame, num > 6)
 # Consider the following list
 
 a_list <- list(nums = c(1, 2, 0.5, -0.5, 3.4), 
-               chars = c('One', 'too', '3'), 
+               chars = c('One', 'TRUE', '3'), 
                logi = c(TRUE, FALSE))
 
 # 5. Extract the last value of 'chars' from a_list
 
 a_list[[2]][3]
 
-# 6. Multiply the second and fourth values in 'nums'
+# 6. Multiply the second and fourth values in 'nums' from a_list
 
 a_list[[1]][2] * a_list[[1]][4] 
 

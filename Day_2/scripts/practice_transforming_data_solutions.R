@@ -2,17 +2,15 @@
 # 3-day R workshop 
 # Day 2
 # Morning
-# 07_practise_transforming_data.R
+# practice_transforming_data.R
 #########################################################################
 # Lets take what we've seen so far and apply it to the example RNA data
 
 # Loading data ------------------------------------------------------------
 
 # library(tidyverse)
-library(readxl)
 
-messy_data <- read_xlsx('Day_2/data/rna_data.xlsx', 
-                        sheet = 1)
+messy_data <- read_csv('Day_2/data/rna_data.csv')
 
 # Note the warning messages due to the presence of NAs
 
@@ -30,6 +28,12 @@ colnames(messy_data)
 table(messy_data$GWEIGHT)
 unique(messy_data$GWEIGHT)
 
+# A very useful package for quickly examining your data is 'summarytools'
+library(summarytools)
+
+view(dfSummary(messy_data)) # Here 'view' is from summarytools (Note the lowercase 'v')
+                            # It allows you to visualise the output in the Viewer window
+
 # select() ----------------------------------------------------------------
 
 # Use the select function to remove columns GID, YORF, and GWEIGHT
@@ -38,25 +42,26 @@ data_v1 <- messy_data %>%
   
   select(-GID, -YORF, -GWEIGHT)
 
-# gather() ----------------------------------------------------------------
+# pivot_longer() ----------------------------------------------------------
 
-# 3. Use gather() to gather the columns starting at G0.05 to G0.3
+# 3. Use 'pivot_longer' to gather the columns starting at G0.05 to G0.3
 # Call the key column 'nutrient' and the value column 'rate'
+# Include the argument na.rm = TRUE
 
 data_v2 <- data_v1 %>%
   
-  gather(key = nutrient,
-         value = rate,
+  pivot_longer(names_to = 'nutrient',
+         values_to  = 'rate',
          G0.05:G0.3) # This will return a tibble with 33222 rows
 
-# Include the argument na.rm = TRUE
+# Here you could include the argument values_drop_na = TRUE
 
 # data_v2 <- data_v1 %>%
-#
-#   gather(key = nutrient,
-#          value = rate, 
-#          G0.05:G0.3, 
-#          na.rm = TRUE) # This will return a tibble with 33195 rows
+# 
+# pivot_longer(names_to = 'nutrient',
+#              values_to  = 'rate',
+#              G0.05:G0.3,
+#              values_drop_na = TRUE) # This will return a tibble with 33144 rows
 
 # separate() --------------------------------------------------------------
 
@@ -91,9 +96,9 @@ data_v4 <- data_v3 %>%
 
 data_v4 <- data_v4 %>%
   
-  mutate(id = 1:33222) %>%
+  mutate(id = 1:33222) %>% # Example of using the magrittr (pipe) operator 
   
-  select(id, everything()) # Just reordering the columns here so 'id' is first
+  select(id, everything()) 
 
 # 6. Check for NA values in the 'rate' column
 
@@ -101,13 +106,15 @@ table(is.na(data_v4$rate))
 
 # Output you should see:
 # FALSE  TRUE 
-# 33195    27 
+# 33144    78 
 
 # 7. Identify the rows containing these NAs
 
 na_rows <- which(is.na(data_v4$rate)) # Identifies the NA entries in 'rate'
 
-# These are row numbers that should match your unique id column
+na_rows # These are row numbers that should match your unique id column
+
+# These are row numbers that should match your unique 'id' column
 # We can remove them as follows...
 
 data_v5 <- data_v4 %>%
@@ -118,9 +125,9 @@ table(is.na(data_v5$rate))
 
 # Output you should see:
 # FALSE 
-# 33195
+# 33144
 
-# The data should now comprise of 33195 rows
+# The data should now comprise of 33144 rows and nine columns
 
 # 8. NOTE: When we separated our columns, we probably generated whitespace
 # To avoid this giving us problems later we need to remove this
@@ -134,7 +141,7 @@ data_v5 <- data_v5 %>%
 
 # 9. There's a lot of information contained within this file
 
-length(unique(data_v5$gene_name))
+length(unique(data_v5$gene_name)) # i.e. the number of unique gene names
 length(unique(data_v5$biological_process))
 
 # 10. What if we want to narrow down the field a little?
@@ -180,8 +187,9 @@ leu1_leu2 <- data_v5 %>%
 
 # mutate() ----------------------------------------------------------------
 
-# When we separated our nutrient column earlier, 
-# the data within underwent coercion to character vectors
+# When we separated our columns earlier, the data in some columns looks to 
+# our eyes as numeric, but is seen by R as characters
+# Place your cursor over columns 'concentration' and 'rate' to confirm this
 
 leucine <- leucine %>%
   

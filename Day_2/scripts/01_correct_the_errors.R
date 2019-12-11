@@ -13,13 +13,13 @@ library(tidyverse)
 
 # This code worked yesterday, but it won't work today
 
-data <- read_csv("data/bad_habits_data.csv")
+data <- read_csv("Day_2/data/bad_habits_data.csv")
 
 # The reason is that the .csv data file is not in your current working
 # directory, hence error below
 
 # Rather than having multiples if the same file in different locations
-# lets try and direct R to the Day1 data folder
+# lets try and direct R to the Day_1 data folder
 # For now, use the import button and navigate to the file location
 # Copy the code identifying the path the the file from the "Code Preview"
 # box and use it to load the file
@@ -41,18 +41,21 @@ diamonds <- diamonds
 # We're now to go through some examples and correct the errors as we go 
 
 # 1. Inaccurate indexing can throw your code out
-# Correct the following for the diamonds (dia_df) data set
+# Correct the following for the diamonds data set
 # Remember when indexing data sets the syntax is [row number, column number]
 # a. Return the first value in the last column
+
 diamonds[1, 11]
 
 # 2. Return the last value in the first column
+
 diamonds[53941, 1]
 
 # 3. Return the first four values for the last four columns
 diamonds[1:4, 8:11]
 
 # 4. Return the first and last value of all columns
+
 diamonds[c(1, 53941), ]
 
 # Missing functions -------------------------------------------------------
@@ -60,10 +63,11 @@ diamonds[c(1, 53941), ]
 diamonds %$% 
   cor(price, carat)
 
-# The function %$% is in the magrittr package
-
 # It's very common to get an error message like to one that has appeared below
 # It's due to the package containing the function not being loaded
+
+# The operator '%$%' is found in the magrittr package and allows you to 
+# manipulate tibbles and extract information as vectors
 
 # magrittr is part of the tidyverse, but not one of the 8 core tidyverse
 # packages loaded at the start of this session
@@ -123,7 +127,11 @@ select(diamonds, carat, cut, clarity)
 install.packages("MASS")
 library(MASS)
 
-select(diamonds, carat, cut, clarity)
+diamonds%>%
+  select(carat, cut, clarity)
+
+# NOTE: This is an error that can really catch you out
+# The code is correct but R is looking in the wrong package for the fuction
 
 # To avoid this problem we can specifically point to the correct package
 

@@ -1,0 +1,31 @@
+---
+title: "Assignment 1 - Set the foundations"
+author: "Your Name"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  word_document:
+    df_print: kable 
+    reference_docx: Assignment_1_styles.docx
+    toc: yes
+---
+
+## Goal
+
+For this task we will construct a generic folder/filing structure that aligns with our own work.
+
+## Tasks
+
+1. Create a new folder on your harddrive
+
+    a. Give it an informative machine- and human-readable name
+    a. Create a subfolder for data/raw data
+    b. Create a subfolder to hold your R scripts
+    c. Create further folders that will hold the range of files you will be creating
+    
+2. Create a R-project file to associate with the folder structure
+    
+3. Place a raw data file in the data/raw_data folder
+
+    a. This can be a 'messy' data file you wish to work on
+    b. This can be a file that comes with a R package
+    

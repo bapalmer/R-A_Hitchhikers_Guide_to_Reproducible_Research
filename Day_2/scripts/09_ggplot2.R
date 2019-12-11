@@ -87,6 +87,7 @@ clean_rna %>%
 
 clean_rna %>%
   filter(biological_process == "leucine biosynthesis") %>%
+  
   ggplot(mapping = aes(x = concentration, y = rate, shape = gene_name)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) 
@@ -95,6 +96,7 @@ clean_rna %>%
 
 clean_rna %>%
   filter(biological_process == "leucine biosynthesis") %>%
+  
   ggplot(mapping = aes(x = concentration, y = rate, shape = gene_name)) +
   geom_point() +
   geom_smooth(mapping = aes(linetype = gene_name), method = "lm", se = FALSE) 
@@ -103,6 +105,7 @@ clean_rna %>%
 
 clean_rna %>%
   filter(biological_process == "leucine biosynthesis") %>%
+  
   ggplot(mapping = aes(x = concentration, y = rate, color = gene_name)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
@@ -319,5 +322,4 @@ interactive_plot <- ggplotly(yx)
 interactive_plot
 
 rm(clean_rna, interactive_plot, leu1, leucine_genes, 
-   plot_a, plot_b, plot_c, basic_plot, standard_plot, 
-   xy, yx)
+   plot_a, plot_b, plot_c, basic_plot, xy, yx)

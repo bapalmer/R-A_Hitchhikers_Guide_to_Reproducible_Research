@@ -7,7 +7,7 @@ The effects of UV radiation on  bronze lettuce Lactuca sativa L. and its potenti
 Principle investigator: Aoife Coffey PhD       
 Boole Library,
 University College Cork
-Email: <aoife.coffey@ucc.ie>              
+Email: <xxxxxxx@email.com>              
 
 ## Background 
 

@@ -1,0 +1,11 @@
+field_name,data_type,data_format,example,standard_units,description
+GID,character,GENE----X,GENE1331X,NA,study specific ID
+YORF,character,A_06_P----,A_06_P5820,NA,study specific ID
+NAME,character,Multiple data types,SFB2       || ER to Golgi transport || molecular function unknown || YNL049C || 1082129,NA,Gene names || Biological process || Molecular function || Public repository Gene ID || Additional unassigned gene ID
+GWEIGHT,integer,integer,1,NA,unknown
+G0.05,double,double,-0.02,NA,Glucose added to culture at a rate of 0.05 units per hour
+G0.1,double,double,-0.27,NA,Glucose added to culture at a rate of 0.1 units per hour
+G0.15,double,double,-0.27,NA,Glucose added to culture at a rate of 0.15 units per hour
+G0.2,double,double,-0.02,NA,Glucose added to culture at a rate of 0.2 units per hour
+G0.25,double,double,0.24,NA,Glucose added to culture at a rate of 0.25 units per hour
+G0.3,double,double,0.25,NA,Glucose added to culture at a rate of 0.3 units per hour

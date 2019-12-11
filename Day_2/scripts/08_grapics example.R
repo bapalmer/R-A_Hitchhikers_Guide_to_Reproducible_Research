@@ -7,6 +7,8 @@
 # Here's an example using the graphics packages that comes with base R
 # Consider the following...
 
+set.seed(27)
+
 x <- rnorm(1:20) # Numeric
 y <- rnorm(1:20) # Numeric 
 
@@ -16,9 +18,9 @@ z <- lm(y ~ x) # z is the output of the linear
 
 plot(z)
 
-# So the plot function is quick and simple to use in standard cases
+# So the plotting function is quick and simple to use in standard cases
 # However when it comes to generating publication quality figures,
-# life gets a little more complicated
+# life gets a little bit more complicated
 
 # The iris data set will be used for this used example
 

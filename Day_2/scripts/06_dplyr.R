@@ -11,6 +11,7 @@
 # 1. Let's recreate our tidy_data from the last script
 
 # Load the data
+
 tidy_data <- read_csv('Day_2/data/messy_data.csv') %>%
   
   # Separate name column
@@ -19,9 +20,9 @@ tidy_data <- read_csv('Day_2/data/messy_data.csv') %>%
            sep = ' ') %>%
   
   # Gather columns work and play
-  gather(key = condition, 
-         value = value, 
-         work:play)
+  pivot_longer(names_to = 'condition', 
+         values_to = 'value', 
+         cols = c('all_work', 'no_play'))
 
 View(tidy_data)
 colnames(tidy_data)
@@ -53,23 +54,24 @@ tidy_data %>%
   
   filter()
 
-# 3c. Repeat this '!' for not
+# 3c. Repeat this '!=' for not
 
 tidy_data %>%
   
   filter()
 
 # 4. Some mutate() examples
-# Currently our 'dob' column is a character vector
-# Using the lubridate package we can convert it into a 'data' vector
 
 tidy_data <- tidy_data %>% # We will overwrite the tidy_data here
   
   mutate(percent = value * 100, # We are creating a new column here
          
          # gender should be a factor
+         # The forcats package contains relevant functions for factors
          gender = as_factor(gender)) # Matching brackets
          # We are overwriting the gender column
+
+tidy_data
 
 # 5. group_by() allows actions to be performed by group
 
@@ -82,8 +84,7 @@ tidy_group <- tidy_data %>%
 
 tidy_group <- ungroup(tidy_group)
 
-# Not very much happened there except that the tibble is
-# now a grouped_df
+# Not very much happened there except that the tibble is now a grouped_df
 # The power of group_by is realised in combination with summarise()
 
 # 6. summarise() reduces multiple values down to a single summary
@@ -110,6 +111,8 @@ new_data <- tibble(id = 1:8,
 joined_data <- full_join(tidy_data,
                          new_data,
                          by = 'id')
+
+joined_data
 
 # 8. Other useful dplyr functions:
 # arrange()
