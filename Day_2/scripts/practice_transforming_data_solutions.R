@@ -2,7 +2,7 @@
 # 3-day R workshop 
 # Day 2
 # Morning
-# practice_transforming_data.R
+# practice_transforming_data_solutions.R
 #########################################################################
 # Lets take what we've seen so far and apply it to the example RNA data
 
