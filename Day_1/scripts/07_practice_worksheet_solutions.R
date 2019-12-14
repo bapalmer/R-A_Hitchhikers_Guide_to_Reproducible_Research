@@ -86,11 +86,11 @@ a_dataframe$char[1]
 
 a_dataframe$num[7:10]
 
-# 3. Subset the dataframe using 'Jane' as the condition
+# 3. Use 'subset' to subset the dataframe using 'Jane' as the condition
 
 subset(a_dataframe, char == 'Jane')
 
-# 4. Subset the dataframe for all 'nums' greater than six
+# 4. Subset the dataframe for all 'num' greater than six
 
 subset(a_data_frame, num > 6)
 

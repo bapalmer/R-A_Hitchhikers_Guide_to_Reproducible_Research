@@ -68,7 +68,7 @@ a_dataframe <- data.frame(num = 1:10,
 # 2. Retrieve the last four values in the nums column
 
 
-# 3. Subset the dataframe using 'Jane' as the condition
+# 3. Use 'subset' to subset the dataframe using 'Jane' as the condition
 
 
 # 4. Subset the dataframe for all 'nums' greater than six
