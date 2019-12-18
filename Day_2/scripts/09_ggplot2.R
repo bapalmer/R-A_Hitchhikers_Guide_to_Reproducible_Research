@@ -250,8 +250,8 @@ ggsave("Day_2/plots/leu1_plot.pdf",
        units = "cm")
 
 # 12. The stat argument
-# Many geoms use the raw date directly
-# geompoint will plot x versus y
+# Many geoms use the raw data directly
+# 'geom_point' will plot a x versus y scatterplot
 
 # Other geoms transform the data first
 # To go this they have a 'stat' argument

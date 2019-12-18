@@ -71,6 +71,6 @@ save(nice_diamonds, all_numbers, all_characters,
 
 # Clear the environment and reload
 
-dia_csv <- read_csv('Day_2/data/diamonds.csv') # Information in lost
+dia_csv <- read_csv('Day_2/data/nice_diamonds.csv') # Information in lost
 
 load('Day_2/data/Day_2.RData') # Column specifications are retained

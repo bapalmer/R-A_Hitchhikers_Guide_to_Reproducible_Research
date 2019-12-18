@@ -35,7 +35,7 @@ messy_data_v2 <- messy_data_v1 %>%
 #associated with these are placed in the second new column
 #
 # e.g. long_data <- wide_data %>%
-#       gather(names_to = 'new_column_for_names'
+#       pivot_longer(names_to = 'new_column_for_names'
 #              values_to = 'new_column_for_values',
 #              column_1:column_n)
 
