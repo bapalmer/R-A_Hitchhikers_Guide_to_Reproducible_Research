@@ -8,8 +8,7 @@ output:
     toc: no
   word_document:
     df_print: kable
-    reference_docx: Assignment_1_styles.docx
-    toc: no
+    reference_docx: Assignment_styles.docx
 ---
 
 ## Goal

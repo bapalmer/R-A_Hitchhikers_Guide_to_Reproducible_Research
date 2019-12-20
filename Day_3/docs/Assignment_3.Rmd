@@ -1,0 +1,29 @@
+---
+title: "Assignment 3 - Complete your reproducible workflow"
+author: "Your Name"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  word_document:
+    df_print: kable
+    reference_docx: Assignment_styles.docx
+  html_document:
+    df_print: paged
+---
+
+## Goal
+
+For this task we will attempt to bring together what we have learned
+
+## Tasks
+
+1. Create a R Markdown document to report on some element of the project you have created.
+
+    a. Plot a simple graph
+    b. Include a simple table
+    c. Write a few lines of text
+    d. Attempt to include some R outputs in your text
+
+2. Knit your project report and day it in docs using `render`.
+
+3. Zip your completed test project and email to [Brendan](b.palmer@ucc.ie) so  that he can check that it is reproducible.
+    

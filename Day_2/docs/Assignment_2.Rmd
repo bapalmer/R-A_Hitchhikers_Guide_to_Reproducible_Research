@@ -5,11 +5,9 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
     df_print: paged
-    toc: yes
   word_document:
     df_print: kable
-    reference_docx: Assignment_1_styles.docx
-    toc: yes
+    reference_docx: Assignment_styles.docx
 ---
 
 ## Goal
@@ -20,9 +18,10 @@ For this task we will construct a generic folder/filing structure that aligns wi
 
 1. Write 2-3 basic R scripts that;
 
-    a. Read in the data to your environment
-    b. Uses ggplot to generate a simple figure
-    c. Creates a simple table summarising the data
+    a. Lists the package dependencies that another person will require on their system to run your code
+    b. Reads in the data to your environment
+    c. Uses ggplot to generate a simple figure
+    d. Creates a simple table summarising the data
 
 2. Link the R script that will read in your data to the other R scripts for plotting and summarising the data using the `source()` function
 
