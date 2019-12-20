@@ -2,32 +2,38 @@
 # 3-day R workshop 
 # Day 3
 # Morning
-# 05_practice_worksheet.R
+# 04_practice_worksheet.R
 ###########################################################################
 
 # 1. Look up the help for functions
 
 help('function')
 
-# 2. Let's attempt to create a function
-# Write a function that will identify the largest number
-# from a series of numbers and then multiply it by itself
+# 2. Let's attempt to create a function by writing the code for each stage 
+# of the operation we are trying to execute
 
-# (i) Start by writing a line of code that will find the biggest number
+# Write a function that will identify the largest number from a series of 
+# numbers and then multiply it by itself
+# i.e c(1:10): Biggest number is 10 so we want 10 x 10
 
-# (ii) Then look at how you might multiply this number by itself
+# (i) Start by writing a line of code that will find the biggest number in 'nums'
 
-# (iii) Do you need to plan ahead for potential NA's?
+nums <- c(1:59, 63, 99)
 
-# (iv) Test it out on some numeric vectors
+# (ii) And now try it for 'nums_na'
 
-# (v) Place the code in a function, give the function a name and run it
+nums_na <- c(1:59, NA, 63, 99)
+
+# (iii) Then look at how you might multiply this number by itself
+
+# (iv) Wrap the code within a function and run it
 
 # 3. Conditional execution
 # Write a function that evaluates the numeric input as positive or negative
 # Print out a confirmation message whether the number is positive/negative
 
 num.test <- function(x){
+  
 }
 
 # 4. Use num.test to evaluate the following vectors
@@ -67,7 +73,7 @@ df2 <- tibble(
 # Create a customised function called area to calculate the area of a circle,
 # given the radius r 
 # Hint: the formula for the area of a circle is pi * r^2
-
+# 'pi' is a built-in constant in R
 
 # 8. One more -------------------------------------------------------------
 # Write a function called statistics that calculates the mean, median, and 

@@ -2,7 +2,7 @@
 # 3-day R workshop 
 # Day 1
 # Morning
-# 03_practice_worksheet.R
+# practice_worksheet_solutions.R
 ###########################################################################
 
 # As you go, fill in this script and run the individual lines of code
@@ -20,7 +20,7 @@ all_numbers <- c(1, 2, 3, 4, 5, 6)
 
 # 3. Create a character atomic vector of five firstnames called all_characters
 
-all_characters <- c('John', 'Mary', 'Joan', 'Freddy', 'Paul')
+all_characters <- c('John', 'Mary', 'Joan', 'Freddy', 'Paul', '1')
 
 # 4. Create a logical atomic vector called all_logical
 
@@ -31,6 +31,8 @@ all_logical <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
 some_chars <- as.character(all_numbers)
 
 back_to_nums <- as.numeric(all_characters)
+
+back_to_nums <- as.numeric(some_chars)
 
 # 6. Use ':' to generate a vector containing a sequence of numeric values
 
@@ -92,7 +94,7 @@ subset(a_dataframe, char == 'Jane')
 
 # 4. Subset the dataframe for all 'num' greater than six
 
-subset(a_data_frame, num > 6)
+subset(a_dataframe, num > 6)
 
 # Consider the following list
 
@@ -110,7 +112,7 @@ a_list[[1]][2] * a_list[[1]][4]
 
 # Dataframes --------------------------------------------------------------
 
-# 1. Create a dataframe with three columns and three rows
+# 1. Create a dataframe with four columns and five rows
 # Column 1: Firstnames
 # Column 2: Ages
 # Column 3: Gender

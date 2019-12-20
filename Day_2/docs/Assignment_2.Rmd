@@ -2,9 +2,12 @@
 title: "Assignment 2 - Build a reproducible workflow"
 author: "Your Name"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
+output:
+  html_document:
+    df_print: paged
+    toc: yes
   word_document:
-    df_print: kable 
+    df_print: kable
     reference_docx: Assignment_1_styles.docx
     toc: yes
 ---

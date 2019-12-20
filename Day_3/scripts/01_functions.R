@@ -7,7 +7,40 @@
 
 # library(tidyverse)
 
-set.seed(10)
+# A simple function that accepts a numeric vector
+
+square.it <- function(a_number) { # Take a numeric argument
+  
+  a_number * a_number # Multiply it by itself
+  
+}
+
+square.it(10)
+square.it(c(12, 14))
+
+# A simple function that accepts a character vector
+
+capitalise <- function(a_character) {
+  
+  toupper(a_character) # toupper is a base R function
+  
+}
+
+capitalise('You rule!')
+
+# A simple function with more than one argument
+
+multiply.it <- function(first_num, second_num) {
+  
+  first_num * second_num
+  
+}
+
+multiply.it(11, 10)
+
+# Why would you write a function in the first place?
+
+set.seed(180) # You can use any integer as the seed
 
 # When you copy and paste the same code mistakes are all too common
 
@@ -18,8 +51,8 @@ df <- tibble(a = sample(1:10, 10, replace = TRUE),
 
 df
 
-# 1. Spot the mistake -----------------------------------------------------
-# The following lines of code rescales/normailises the values in a column 
+# 1. Spot the mistakes ----------------------------------------------------
+# The following lines of code rescales/normalises the values in a column 
 # between the range 0 to 1
 
 df$a <- (df$a - min(df$a, na.rm = TRUE)) /
@@ -41,7 +74,6 @@ df
 
 # As you build up experience writing functions, you'll want them to work
 # for all eventualities, so some future data sets may contain NA's
-
 
 # 2. Simple function ------------------------------------------------------
 # Lets create a simple function that will do what we need from above

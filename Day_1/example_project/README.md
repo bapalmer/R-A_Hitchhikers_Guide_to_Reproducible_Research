@@ -17,3 +17,11 @@ UV wavelengths are a natural part of the solar spectrum and are associated with 
 
 The primary aim of this study was to investigate the effects of natural UV radiation on the bronze lettuce with a focus on potential increases 
 in the nutritional and monetary value of the end-product. 
+
+## Packaged data, code and reports: Binder link
+<!-- badges: start -->
+[![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bapalmer/RSS_Belfast_2019/master?urlpath=rstudio)
+<!-- badges: end -->
+
+## Packaged data, code and reports: DOI
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3383331.svg)](https://doi.org/10.5281/zenodo.3383331)

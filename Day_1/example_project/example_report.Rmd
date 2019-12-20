@@ -1,7 +1,7 @@
 ---
 title: "This is a reproducible document"
 author: "Dr. Brendan Palmer"
-date: "2nd August 2019"
+date: "13th December 2019"
 output:
   word_document:
     fig_height: 4

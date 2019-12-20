@@ -2,46 +2,62 @@
 # 3-day R workshop 
 # Day 3
 # Morning
-# 06_practice_worksheet_solutions.R
+# practice_worksheet_solutions.R
 ###########################################################################
 
 # 1. Look up the help for functions
 
 help('function')
 
-# 2. Let's attempt to create a function
-# Write a function that will identify the largest number
-# from a series of numbers and then multiply it by itself
+# 2. Let's attempt to create a function by writing the code for each stage 
+# of the operation we are trying to execute
 
-# (i) Start by writing a line of code that will find the biggest number
+# Write a function that will identify the largest number from a series of 
+# numbers and then multiply it by itself
+# i.e c(1:10): Biggest number is 10 so we want 10 x 10
 
-# (ii) Then look at how you might multiply this number by itself
+# (i) Start by writing a line of code that will find the largest number in 'nums'
 
-# (iii) Do you need to plan ahead for potential NA's?
+nums <- c(1:59, 63, 99)
 
-# (iv) Test it out on some numeric vectors
+largest <- max(nums)
+largest
 
-# (v) Place the code in a function, give the function a name and run it
+# (ii) And now try it for 'nums_na' as need to assume the presence of NA values
 
-# Numeric vector
+nums_na <- c(1:59, NA, 63, 99)
+largest <- max(nums_na)
+largest
 
-some_nums <- c(1:59, NA, 63, 99)
-some_chars <- letters[1:12]
+largest <- max(nums_na, na.rm = TRUE)
+largest
 
-big.sq <- function(x){
+# (iii) Then look at how you might multiply this number by itself
+
+largest * largest
+
+# (iv) Wrap the code within a function and run it
+
+largest.sq <- function(x){
   
-  if (is.numeric(x)){ # Check the input
-    biggest <- max(x, na.rm = TRUE)
-    biggest * biggest
+  if (is.numeric(x)){ # Check that the input is numeric
+    largest <- max(x, na.rm = TRUE)
+    largest * largest
 
   } else {
     print('You failed to supply a numeric vector to this function')
   }
 } 
 
-big.sq(some_nums)
+# Test it with a numeric vector
 
-big.sq(some_chars)
+largest.sq(nums_na)
+
+# Test it with a character vector
+
+some_chars <- letters[1:10]
+
+largest.sq(some_chars)
 
 # 3. Conditional execution
 # Write a function that evaluates the numeric input as positive or negative
@@ -87,6 +103,12 @@ for (i in 1:ncol(mtcars)){
 
 output
 output_list
+
+output_list[1]
+output_list[[1]]
+
+typeof(output_list[1])
+typeof(output_list[[1]])
 
 # 6. You might want to modify and existing object using a for loop
 # Recall our function rescale.01

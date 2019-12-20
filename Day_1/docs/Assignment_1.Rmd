@@ -2,9 +2,12 @@
 title: "Assignment 1 - Set the foundations"
 author: "Your Name"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
+output:
+  html_document:
+    df_print: paged
+    toc: no
   word_document:
-    df_print: kable 
+    df_print: kable
     reference_docx: Assignment_1_styles.docx
     toc: no
 ---
@@ -29,4 +32,5 @@ For this task we will construct a generic folder/filing structure that aligns wi
     b. This can be a file that comes with a R package
 
 4. Create a basic comma or tab deliminated data dictionary and store it alonside your data file.
+
     

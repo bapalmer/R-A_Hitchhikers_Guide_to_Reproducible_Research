@@ -67,7 +67,7 @@ ggplot(data = diamonds) +
 
 ggplot(data = diamonds, 
        mapping = aes(x = carat, y = price, colour = cut)) +
-  geom_point()
+  geom_point() # Scatter plots are less useful where you have a lot of data
 
 basic_plot <- ggplot(data = filter(diamonds, price > 18000), 
                      mapping = aes(x = carat, y = price, colour = cut)) +
@@ -85,7 +85,7 @@ ggplot(data = filter(diamonds, price > 18000),
   geom_beeswarm() # A nice way to display x-y point data
 
 ggplot(data = filter(diamonds, price > 18000), 
-       mapping = aes(x = price, colour = clarity)) +
+       mapping = aes(x = price)) +
   geom_histogram(bins = 10)
 
 # 4. Change the aesthetics
