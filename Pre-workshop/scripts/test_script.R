@@ -1,8 +1,26 @@
+###########################################################################
+# 3-day R workshop 
+# Pre-workshop to-do
+###########################################################################
+
 # Install the packages you'll require for the workshop
 
-install.packages(c('tidyverse', 'cowplot', 'datapasta', 'janitor', 
-                   'igraph', 'installr', 'knitr', 'kableExtra', 'MASS', 
-                   'plotly', 'patchwork', 'reprex', 'summarytools'))
+# First we creating an object with a list of the packages that we'll need
+
+list.of.packages <- c('tidyverse', 'cowplot', 'datapasta', 'janitor', 
+                        'igraph', 'installr', 'knitr', 'kableExtra', 'MASS', 
+                        'plotly', 'patchwork', 'reprex', 'summarytools') 
+
+# Now we will check to see if any of the packages required are not yet on our system
+
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+
+# Any package missing will be added to the ‘new.packages’ object 
+# which can then be used to install any missing ones
+
+if(length(new.packages)) install.packages(new.packages)
+
+# Load the tidyverse package
 
 library(tidyverse)
 
@@ -47,3 +65,4 @@ cleaned_genes_tbl %>%
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   facet_wrap(~ name)
+
